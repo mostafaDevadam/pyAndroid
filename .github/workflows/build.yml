@@ -5,7 +5,6 @@ on: [push]
 jobs:
   build:
     runs-on: ubuntu-latest
-    # Run the job directly inside Kivy's official pre-built container
     container:
       image: kivy/buildozer:latest
 
@@ -13,8 +12,10 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v4
 
-      - name: Fix Git Directory Permissions
+      - name: Correct Workspace Permissions
         run: |
+          chown -R 1000:1000 /github/workspace
+          chmod -R 777 /github/workspace
           git config --global --add safe.directory /github/workspace
 
       - name: Build Android APK
