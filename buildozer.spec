@@ -12,6 +12,14 @@ package.domain = org.example
 # (list) Source files to include (let it include python and kv files)
 source.include_exts = py,png,jpg,kv,atlas
 
+
+# (str) Source directory where your app lives (dot means current folder)
+source.dir = .
+
+# (str) Application versioning (choose one)
+version = 0.1
+
+
 # (list) Application requirements
 # Add other dependencies here separated by commas (e.g., requests)
 requirements = python3,kivy
@@ -21,6 +29,8 @@ orientation = portrait
 
 # (list) Permissions
 android.permissions = INTERNET
+
+
 
 [buildozer]
 log_level = 2
